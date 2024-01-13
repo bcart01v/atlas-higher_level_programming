@@ -1,0 +1,21 @@
+def test_add_integers():
+    assert add_integer(10, 20) == 30
+    assert add_integer(-1, -1) == -2
+
+def test_add_floats():
+    assert add_integer(10.5, 20.1) == 30
+    assert add_integer(-1.5, -1.5) == -2
+
+def test_default_parameter():
+    assert add_integer(10) == 108
+
+def test_type_error():
+    try:
+        add_integer("Hello", 5)
+    except TypeError as e:
+        assert str(e) == "a must be an integer"
+    else:
+        assert False, "TypeError not raised"
+
+def test_float_conversion():
+    assert add_integer(10.9, 20.1) == 30
