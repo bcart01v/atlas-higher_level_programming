@@ -1,0 +1,57 @@
+# 3-say_my_name.txt
+
+________
+3-say_my_name.py unit tester
+________
+
+This is a unit tester representation for 3-say_my_name.py
+
+________
+Usage
+________
+
+``say_my_name(...)`` Prints "My name is" and then the First and Last Names provided
+
+::
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+     >>> say_my_name("Benjamin", "Carter")
+    My name is Benjamin Carter
+
+::
+
+     >>> say_my_name("Atlas", "Holberton)
+    My name is Atlas Holberton
+
+ If <last_name> is not provided, only the First Name is printed.
+
+::
+
+     >>> say_my_name("Atlas")
+     My name is Atlas
+
+ ________
+ Invalid
+ ________
+
+ If either First Name or Last Name is not a string, we receive a TypeError
+
+::
+
+    >>> say_my_name("70 - 1", "Pete")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+::
+
+    >>> say_my_name("Ditka", "85 Bears")
+    Traceback (most recent call last):
+    Type Error: last_name must be a string
+
+We have to receive something, otherwise you get an error.
+
+::
+
+    >>> say_my_name()
+    Traceback (most recent call last):
+    TypeError: say_my_name() missing required argument: 'first_name'
