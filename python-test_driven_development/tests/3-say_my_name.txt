@@ -15,20 +15,20 @@ ________
 ::
 
     >>> say_my_name = __import__('3-say_my_name').say_my_name
-     >>> say_my_name("Benjamin", "Carter")
+    >>> say_my_name("Benjamin", "Carter")
     My name is Benjamin Carter
 
 ::
 
-     >>> say_my_name("Atlas", "Holberton)
+    >>> say_my_name("Atlas", "Holberton")
     My name is Atlas Holberton
 
  If <last_name> is not provided, only the First Name is printed.
 
 ::
 
-     >>> say_my_name("Atlas")
-     My name is Atlas
+    >>> say_my_name("Atlas")
+    My name is Atlas 
 
  ________
  Invalid
@@ -38,15 +38,15 @@ ________
 
 ::
 
-    >>> say_my_name("70 - 1", "Pete")
+    >>> say_my_name(70 - 1, "Pete")
     Traceback (most recent call last):
     TypeError: first_name must be a string
 
 ::
 
-    >>> say_my_name("Ditka", "85 Bears")
+    >>> say_my_name("Ditka", 85)
     Traceback (most recent call last):
-    Type Error: last_name must be a string
+    TypeError: last_name must be a string
 
 We have to receive something, otherwise you get an error.
 
@@ -54,4 +54,4 @@ We have to receive something, otherwise you get an error.
 
     >>> say_my_name()
     Traceback (most recent call last):
-    TypeError: say_my_name() missing required argument: 'first_name'
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
