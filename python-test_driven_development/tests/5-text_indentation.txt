@@ -1,0 +1,60 @@
+# 5-text_indentation.txt
+
+________
+5-text_indentation.py unit tester
+________
+
+This is a mock unit tester for 5-text_indentation.py
+
+________
+Valid Tests
+________
+
+``text_indentation(...)`` Prints text with 2 new lines
+after special characters
+
+::
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+    >>> text_indentation("This is a sentence.")
+    This is a sentence.
+    <BLANKLINE>
+
+
+::
+
+    >>> text_indentation("What.Am.I.Doing.Here.")
+    What.
+    <BLANKLINE>
+    Am.
+    <BLANKLINE>
+    I.
+    <BLANKLINE>
+    Doing.
+    <BLANKLINE>
+    Here.
+    <BLANKLINE>
+
+::
+
+    >>> text_indentation("What's the schools new name?Atlas.")
+    What's the schools new name?
+    <BLANKLINE>
+    Atlas.
+    <BLANKLINE>
+
+________
+Invalid Tests
+________
+
+::
+
+    >>> text_indentation(9)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+::
+
+    >>> text_indentation(924301249141902412091241409124124)
+    Traceback (most recent call last):
+    TypeError: text must be a string
