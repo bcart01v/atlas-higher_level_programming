@@ -63,7 +63,8 @@ class Rectangle:
     def __str__(self):
         if self.__width == 0 or self.__height == 0:
             return ""
-        return "\n".join([self.print_symbol * self.__width] * self.__height)
+        print_symbol = str(self.print_symbol)
+        return "\n".join([print_symbol * self.__width] * self.__height)
 
     def __repr__(self):
         """Eval string representation of rectangle"""
@@ -73,11 +74,14 @@ class Rectangle:
     def print_symbol(self):
         """Print symbol"""
         if Rectangle.debug == 1:
-            print("Debug: print_symbol value is", self._instance_symbol or Rectangle.print_symbol)
+            Line1="Debug: print_symbol value is"
+            Line2=self._instance_symbol or Rectangle.print_symbol
+            Line3=Rectangle.print_symbol
+            print(Line1, Line2 or Line3)
+
         if self._instance_symbol is not None:
             return self._instance_symbol
         return Rectangle.default_print_symbol
-
 
     @print_symbol.setter
     def print_symbol(self, value):
