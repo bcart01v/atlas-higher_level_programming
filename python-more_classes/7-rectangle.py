@@ -5,12 +5,12 @@
 class Rectangle:
     """Rectangle class with width and height"""
     number_of_instances = 0
-    print_symbol = "#"
 
-    def __init__(self, width=0, height=0):
+    def __init__(self, width=0, height=0, print_symbol="#"):
         """Initialization with optional width and height"""
         self.width = width
         self.height = height
+        self.print_symbol = print_symbol
         Rectangle.number_of_instances += 1
 
     @property
@@ -56,14 +56,16 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             print()
             return
+        symbol = str(self.print_symbol)
         for i in range(self.__height):
-            print(Rectangle.print_symbol * self.__width)
+            print(symbol * self.__width)
 
     def __str__(self):
         """String representation of rectangle"""
         if self.__width == 0 or self.__height == 0:
             return ""
-        return "\n".join([Rectangle.print_symbol * self.__width] * self.__height)
+        symbol = str(self.print_symbol)
+        return "\n".join([symbol * self.__width] * self.__height)
 
     def __repr__(self):
         """Eval string representation of rectangle"""
