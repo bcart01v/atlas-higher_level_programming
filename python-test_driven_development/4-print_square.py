@@ -1,4 +1,4 @@
-#!/user/bin/python3
+#!/usr/bin/python3
 # 4-print_square.py
 
 """Defines a function that prints a square with the character #."""
