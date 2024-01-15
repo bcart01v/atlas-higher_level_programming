@@ -1,0 +1,70 @@
+# 4-print_square.txt
+
+________
+4-print_square unit tester
+________
+
+This is a mock unit tester for 4-print_square
+
+________
+Usage
+________
+
+``print_square(...)`` Prints a square based on number passed.
+
+::
+    >>> print_square = __import__('4-print_square').print_square
+    >>> print_square(3)
+    ###
+    ###
+    ###
+
+::
+
+    >>> print_square(5)
+    #####
+    #####
+    #####
+    #####
+    #####
+
+::
+
+    >>> print_square(2)
+    ##
+    ##
+
+::
+
+    >>> print_square(1)
+    #
+
+________
+Invalid Tests
+________
+
+::
+
+    >>> print_square("Ben is so cool!")
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+::
+    >>> print_square("Ben is still cool")
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+::
+    >>> print_square("Holberton Atlas Atlas Holberton")
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+::
+    >>> print_square(-1)
+    Traceback (most recent call last):
+    ValueError: size must be >=0
+
+::
+    >>> print_square(-3.9)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
