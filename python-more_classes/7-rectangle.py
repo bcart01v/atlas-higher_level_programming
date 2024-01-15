@@ -74,9 +74,9 @@ class Rectangle:
     def print_symbol(self):
         """Print symbol"""
         if Rectangle.debug == 1:
-            Line1="Debug: print_symbol value is"
-            Line2=self._instance_symbol or Rectangle.print_symbol
-            Line3=Rectangle.print_symbol
+            Line1 = "Debug: print_symbol value is"
+            Line2 = self._instance_symbol or Rectangle.print_symbol
+            Line3 = Rectangle.print_symbol
             print(Line1, Line2 or Line3)
 
         if self._instance_symbol is not None:
