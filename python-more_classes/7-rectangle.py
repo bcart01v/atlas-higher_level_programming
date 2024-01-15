@@ -57,7 +57,7 @@ class Rectangle:
             print()
             return
         for i in range(self.__height):
-            print("#" * self.__width)
+            print(Rectangle.print_symbol * self.__width)
 
     def __str__(self):
         """String representation of rectangle"""
