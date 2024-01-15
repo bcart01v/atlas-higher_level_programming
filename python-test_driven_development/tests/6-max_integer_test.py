@@ -15,7 +15,7 @@ class TestMaxInteger(unittest.TestCase):
     def test_single_element(self):
         "Single element"
         self.assertEqual(max_integer([1]), 1)
-        self.assertEqual(max_integer[-20], -20)
+        self.assertEqual(max_integer([-20]), -20)
         self.assertEqual(max_integer([500]), 500)
 
     def test_negative_numbers(self):
@@ -40,7 +40,7 @@ class TestMaxInteger(unittest.TestCase):
         "Test that a TypeError is actually happpening for invalid input"
         with self.assertRaises(TypeError):
             max_integer(1, "Pofart", 5)
-        with self.asserRaises(TypeError):
+        with self.assertRaises(TypeError):
             max_integer(None)
 
 if __name__ == '__main__':
