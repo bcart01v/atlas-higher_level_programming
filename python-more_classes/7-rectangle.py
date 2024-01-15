@@ -5,12 +5,14 @@
 class Rectangle:
     """Rectangle class with width and height"""
     number_of_instances = 0
+    default_print_symbol = "#"
+    debug = 0
 
-    def __init__(self, width=0, height=0, print_symbol="#"):
+    def __init__(self, width=0, height=0):
         """Initialization with optional width and height"""
         self.width = width
         self.height = height
-        self.print_symbol = print_symbol
+        self._instance_symbol = None
         Rectangle.number_of_instances += 1
 
     @property
@@ -52,26 +54,34 @@ class Rectangle:
         return 2 * (self.__width + self.__height)
 
     def print(self):
-        """Print rectangle"""
         if self.__width == 0 or self.__height == 0:
             print()
             return
-        symbol = str(self.print_symbol)
         for i in range(self.__height):
-            print(symbol * self.__width)
+            print(self.print_symbol * self.__width)
 
     def __str__(self):
-        """String representation of rectangle"""
         if self.__width == 0 or self.__height == 0:
             return ""
-        symbol = str(self.print_symbol)
-        return "\n".join([symbol * self.__width] * self.__height)
+        return "\n".join([self.print_symbol * self.__width] * self.__height)
 
     def __repr__(self):
         """Eval string representation of rectangle"""
         return "Rectangle({}, {})".format(self.__width, self.__height)
 
+    @property
+    def print_symbol(self):
+        """Print symbol"""
+        if Rectangle.debug == 1:
+            print("Debug: print_symbol value is", self._instance_symbol or Rectangle.print_symbol)
+        if self._instance_symbol is not None:
+            return self._instance_symbol
+        return Rectangle.default_print_symbol
 
+
+    @print_symbol.setter
+    def print_symbol(self, value):
+        self._instance_symbol = value
 
     def __del__(self):
         """Delete Object, we're done."""
