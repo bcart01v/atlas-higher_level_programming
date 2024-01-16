@@ -1,12 +1,15 @@
 #!/usr/bin/python3
-"""Module Docstring: This module provides a Square class used to represent a square."""
+"""Module Docstring: This module provides a 
+Square class used to represent a square."""
+
 
 
 class Square:
     """Class to represent a square.
 
     Attributes:
-        size (int): The size of the square's side. Must be a non-negative integer.
+        size (int): The size of the square's side. 
+        Must be a non-negative integer.
 
     Methods:
         area(): Returns the area of the square.
@@ -23,7 +26,8 @@ class Square:
 
     @property
     def size(self):
-        """int: The size of the square's side with a property getter and setter."""
+        """int: The size of the square's side with 
+        a property getter and setter."""
         return self.__size
 
     @size.setter
