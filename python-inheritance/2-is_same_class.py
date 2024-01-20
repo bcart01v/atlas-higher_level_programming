@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 
+""" Module: 2-is_same_class.py
+"""
+
 class IsSameClass:
     """Class to check if an object is the same as the specified class
     
