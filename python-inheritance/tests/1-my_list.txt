@@ -1,0 +1,36 @@
+# 1-my_list.txt
+
+############
+1-my_list.txt mock unit tester
+############
+
+This is a mock unit tester for 1-my_list.txt
+
+
+############
+Valid Tests
+############
+
+``print_sorted(...)`` Prints a sorted list that you've passed
+
+
+::
+
+    >>>print_sorted = __import__(`1-my_list`).my_list
+    >>>print_sorted(A, C, D, B)
+    A, B, C, D
+
+::
+
+    >>>print_sorted(Z, Y, X, W)
+    W, X, Y, Z
+
+############
+Invalid Tests
+############
+
+::
+
+    >>> print_sorted(A, 3, B, 5)
+    Traceback (most recent call last):
+    
