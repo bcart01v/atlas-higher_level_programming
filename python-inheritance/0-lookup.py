@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-
 """ A simple Lookup function """
 
 def lookup(obj):
