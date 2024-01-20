@@ -3,7 +3,7 @@
 """ Module: 2-is_same_class.py
 """
 
-class IsSameClass:
+class is_same_class:
     """Class to check if an object is the same as the specified class
     
     Function:
