@@ -14,7 +14,7 @@ class is_same_class:
         Used to check if an object is the same as the specified class
     """ 
 
-    def is_same_class(obj, a_class):
+    def is_kind_of_same_class(obj, a_class):
         """
         Check if object is an instance of the specified class
         
