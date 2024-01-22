@@ -2,6 +2,7 @@
 
 """Module for Student Class"""
 
+
 class Student:
     """Student class. For each student, his/her first name, last name and age
     will be saved"""
