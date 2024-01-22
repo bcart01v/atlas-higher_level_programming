@@ -1,0 +1,67 @@
+# 7_base_geometry_test.txt
+
+##############
+# BaseGeometry class unit tester
+##############
+
+This is a unit tester for the BaseGeometry class in the 7-base_geometry module.
+
+First, import the BaseGeometry class from the module.
+
+::
+
+    >>> base_geometry_module = __import__('7_base_geometry')
+    >>> BaseGeometry = base_geometry_module.BaseGeometry
+    >>> bg = BaseGeometry()
+
+##############
+# Valid Tests
+##############
+
+Testing the area method, which should raise an exception.
+
+::
+
+    >>> bg = BaseGeometry()
+    >>> bg.area()
+    Traceback (most recent call last):
+    ...
+    Exception: area() is not implemented
+
+Testing the integer_validator method with valid input.
+
+::
+
+    >>> bg.integer_validator("age", 5)
+    # This should not raise any exception
+
+##############
+# Invalid Tests
+##############
+
+Testing the integer_validator method with a string instead of an integer.
+
+::
+
+    >>> bg.integer_validator("age", "five")
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+Testing the integer_validator method with a negative integer.
+
+::
+
+    >>> bg.integer_validator("age", -5)
+    Traceback (most recent call last):
+    ...
+    ValueError: age must be greater than 0
+
+Testing the integer_validator method with zero.
+
+::
+
+    >>> bg.integer_validator("age", 0)
+    Traceback (most recent call last):
+    ...
+    ValueError: age must be greater than 0
