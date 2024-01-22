@@ -15,8 +15,6 @@ class Student:
             raise TypeError("last_name must be a string")
         if type(age) is not int:
             raise TypeError("age must be an integer")
-        if age < 0:
-            raise TypeError("age must be >= 0")
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
