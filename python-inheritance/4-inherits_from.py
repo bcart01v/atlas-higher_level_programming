@@ -17,7 +17,7 @@
 def inherits_from(obj, a_class):
     """ Function: inherits_from
         Checks if an object is an instance of a class that inherited
-        from the specified class. 
+        from the specified class.
 
         Args:
             obj (object): The object to check
