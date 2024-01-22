@@ -10,6 +10,8 @@ First, import the BaseGeometry class from the module.
 
 ::
 
+    >>> import sys
+    >>> sys.path.append('../')  # Adjusts the path to the parent directory
     >>> base_geometry_module = __import__('7_base_geometry')
     >>> BaseGeometry = base_geometry_module.BaseGeometry
     >>> bg = BaseGeometry()
@@ -21,8 +23,6 @@ First, import the BaseGeometry class from the module.
 Testing the area method, which should raise an exception.
 
 ::
-
-    >>> bg = BaseGeometry()
     >>> bg.area()
     Traceback (most recent call last):
     ...
