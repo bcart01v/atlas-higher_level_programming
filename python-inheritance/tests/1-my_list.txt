@@ -137,10 +137,3 @@ For instance, elements can be added to a ``MyList`` with the ``append()`` method
     >>> my_list.print_sorted()
     []
 
-
-::
-
-    >>> my_list = MyList([1, "Betty", "Holberton", 5])
-    >>> my_list.print_sorted()
-    Traceback (most recent call last):
-    TypeError: unorderable types: str() < int()
