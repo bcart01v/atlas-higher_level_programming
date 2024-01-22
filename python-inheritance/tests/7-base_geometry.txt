@@ -10,11 +10,10 @@ First, import the BaseGeometry class from the module.
 
 ::
 
-    >>> import sys
-    >>> sys.path.append('../')  # Adjusts the path to the parent directory
-    >>> base_geometry_module = __import__('7_base_geometry')
-    >>> BaseGeometry = base_geometry_module.BaseGeometry
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
     >>> bg = BaseGeometry()
+    >>> type(bg)
+    <class '7-base_geometry.BaseGeometry'>
 
 ##############
 # Valid Tests
@@ -33,7 +32,6 @@ Testing the integer_validator method with valid input.
 ::
 
     >>> bg.integer_validator("age", 5)
-    # This should not raise any exception
 
 ##############
 # Invalid Tests
@@ -45,7 +43,6 @@ Testing the integer_validator method with a string instead of an integer.
 
     >>> bg.integer_validator("age", "five")
     Traceback (most recent call last):
-    ...
     TypeError: age must be an integer
 
 Testing the integer_validator method with a negative integer.
@@ -54,7 +51,6 @@ Testing the integer_validator method with a negative integer.
 
     >>> bg.integer_validator("age", -5)
     Traceback (most recent call last):
-    ...
     ValueError: age must be greater than 0
 
 Testing the integer_validator method with zero.
@@ -63,5 +59,4 @@ Testing the integer_validator method with zero.
 
     >>> bg.integer_validator("age", 0)
     Traceback (most recent call last):
-    ...
     ValueError: age must be greater than 0
