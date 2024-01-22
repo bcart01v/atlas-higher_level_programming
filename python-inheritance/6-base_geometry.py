@@ -12,8 +12,9 @@
 
     Usage:
         Only raises an exception (for now)
-
 """
+
+
 class BaseGeometry:
     """ BaseGeometry class
 
