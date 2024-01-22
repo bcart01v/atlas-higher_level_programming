@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"Module documentation goes here"
+"Module 8-rectangle.py. this module contains the Rectangle Class."
 
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
@@ -18,8 +18,6 @@ BaseGeometry = __import__('7-base_geometry').BaseGeometry
     Usage:
         Not for now.
 """
-
-
 
 class Rectangle(BaseGeometry):
     """ Class: Rectangle
