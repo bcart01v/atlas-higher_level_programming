@@ -3,6 +3,8 @@
 
 
 class MyClass:
+
+
     """ My class
     """
 
