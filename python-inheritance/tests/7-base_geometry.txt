@@ -19,12 +19,20 @@ First, import the BaseGeometry class from the module.
 # Valid Tests
 ##############
 
+::
+
+    >>> print(bg.area) # doctest: +ELLIPSIS, +NORMALIZE_WHITESPACE
+    <bound method BaseGeometry.area of <7-base_geometry.BaseGeometry 
+    object at...>>
+
+
+::
+
 Testing the area method, which should raise an exception.
 
 ::
     >>> bg.area()
     Traceback (most recent call last):
-    ...
     Exception: area() is not implemented
 
 Testing the integer_validator method with valid input.
@@ -60,3 +68,10 @@ Testing the integer_validator method with zero.
     >>> bg.integer_validator("age", 0)
     Traceback (most recent call last):
     ValueError: age must be greater than 0
+
+::
+
+>>> bg.integer_validator()
+Traceback (most recent call last):
+  ...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
