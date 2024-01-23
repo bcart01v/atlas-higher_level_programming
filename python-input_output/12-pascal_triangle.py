@@ -1,4 +1,4 @@
-#!/usr/bin/phyton3
+#!/usr/bin/python3
 
 """Module Pascal's Triangle"""
 
