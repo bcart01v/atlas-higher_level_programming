@@ -39,7 +39,7 @@ class Rectangle(Base):
         self.__y = y
 
     def _ValidateCheck(self, value, name, min_value = 0):
-        """ Instead of doing the same check 100 times, 
+        """ Instead of doing the same check 100 times,
         I wanted a way to check in one spot. This is that
         one spot.
 
@@ -55,12 +55,12 @@ class Rectangle(Base):
 
         if not isinstance(value, int):
             raise TypeError(f"{name} must be an integer")
-        if name == "height" or name == "width":
-            if value < min_value:
-                raise ValueError(f"{name} must be > {min_value}")
-        if name == "x" or name =="y":
-            if value < min_value:
-                raise ValueError(f"{name} must be >= {min_value}")
+        if name in ["width", "height"]:
+            if value <= 0:
+                raise ValueError(f"{name} must be > 0")
+        if name in ["x", "y"]:
+            if value < 0:
+                raise ValueError(f"{name} must be >= 0")
 
     @property
     def width(self):
