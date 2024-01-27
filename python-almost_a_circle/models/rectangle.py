@@ -1,13 +1,31 @@
 #!/usr/bin/python3
-
-""" Rectangle class """
-
+""" 
+This module, in it's current state, provides the Rectangle class
+which inherits from the Base class. It's presumed to represent
+rectangular shapes with various properties.
+"""
 
 from models.base import Base
 
 class Rectangle(Base):
+    """ A Rectangle class to represent... well, a Rectangle.
+
+    Attributes: 
+    width (int): Width of the Rectangle
+    height (int): Height of the Rectangle
+    x (int): x - Coordinate of Rectangle
+    y (int): y - Coordinate of Rectangle
+    """
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Constructor"""
+        """ Init Function
+
+        Args:
+            width (int): Width of the Rectangle
+            height (int): Height of the Rectangle
+            x (int): Coordinate of the Rectangle. Defaults to 0.
+            y (int): Coordinate of the Rectangle. Defaults to 0.
+            id (_type_): The ID of the rectangle. Defaults to None.
+        """
         super().__init__(id)
         self.__width = width
         self.__height = height
