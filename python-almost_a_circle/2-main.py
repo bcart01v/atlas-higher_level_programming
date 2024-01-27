@@ -10,7 +10,7 @@ if __name__ == "__main__":
         print("[1{}] {}".format(e.__class__.__name__, e))
 
     try:
-        r = Rectangle(10, 2)
+        r = Rectangle(10, -2)
         r.width = -10
     except Exception as e:
         print("[2{}] {}".format(e.__class__.__name__, e))

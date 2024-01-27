@@ -28,8 +28,8 @@ class Rectangle(Base):
         """
         super().__init__(id)
         
-        self._ValidateCheck(width, 'width', 1)
-        self._ValidateCheck(height, 'height', 1)
+        self._ValidateCheck(width, 'width', 0)
+        self._ValidateCheck(height, 'height', 0)
         self._ValidateCheck(x, 'x')
         self._ValidateCheck(y, 'y')
         
