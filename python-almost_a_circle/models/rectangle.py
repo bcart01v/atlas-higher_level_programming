@@ -27,10 +27,36 @@ class Rectangle(Base):
             id (_type_): The ID of the rectangle. Defaults to None.
         """
         super().__init__(id)
+        
+        self._ValidateCheck(width, 'width', 1)
+        self._ValidateCheck(height, 'height', 1)
+        self._ValidateCheck(x, 'x')
+        self._ValidateCheck(y, 'y')
+        
         self.__width = width
         self.__height = height
         self.__x = x
         self.__y = y
+
+    def _ValidateCheck(self, value, name, min_value = 0):
+        """ Instead of doing the same check 100 times, 
+        I wanted a way to check in one spot. This is that
+        one spot.
+
+        Args:
+        value(int): The value we are validating
+        name(str): The name it's validating
+        min_value (int): The minimum we can accept. Default of 0
+
+        Raises:
+            TypeError if value is not an Integer
+            ValueError if the value is < 0
+        """
+
+        if not isinstance(value, int):
+            raise TypeError(f"{name} must be an integer")
+        if value < min_value:
+            raise ValueError(f"{name} must be >= {min_value}")
 
     @property
     def width(self):
@@ -40,10 +66,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """Setter for width"""
-        if not isinstance(value, int):
-            raise TypeError("width must be an integer")
-        if value <= 0:
-            raise ValueError("width must be > 0")
+        self._ValidateCheck(value, 'width', 1)
         self.__width = value
 
     @property
@@ -54,10 +77,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """Setter for height"""
-        if not isinstance(value, int):
-            raise TypeError("height must be an integer")
-        if value <= 0:
-            raise ValueError("height must be > 0")
+        self._ValidateCheck(value, 'height',1)
         self.__height = value
 
     @property
@@ -68,10 +88,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """Setter for x"""
-        if not isinstance(value, int):
-            raise TypeError("x must be an integer")
-        if value < 0:
-            raise ValueError("x must be >= 0")
+        self._ValidateCheck(value, 'x', 1)
         self.__x = value
 
     @property
@@ -82,9 +99,5 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """Setter for y"""
-        if not isinstance(value, int):
-            raise TypeError("y must be an integer")
-        if value < 0:
-            raise ValueError("y must be >= 0")
+        self._ValidateCheck(value, 'y', 1)
         self.__y = value
-
