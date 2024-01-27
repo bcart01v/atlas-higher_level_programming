@@ -55,8 +55,12 @@ class Rectangle(Base):
 
         if not isinstance(value, int):
             raise TypeError(f"{name} must be an integer")
-        if value < min_value:
-            raise ValueError(f"{name} must be >= {min_value}")
+        if name == "height" or name == "width":
+            if value < min_value:
+                raise ValueError(f"{name} must be > 0")
+        if name == "x" or name =="y":
+            if value < min_value:
+                raise ValueError(f"{name} must be >= {min_value}")
 
     @property
     def width(self):
