@@ -23,12 +23,32 @@ def width(self, value):
     self.__width = value
 
 @property
-def height(self);
+def height(self):
     """ Getter """
-    return (self.__height)
+    return self.__height
 
 @height.setter
 def height(self, value):
     """ Setter """
     # This will probably need validation of some sort
     self.__height = value
+
+@property
+def x(self):
+    """ Getter """
+    return self.x
+
+@x.setter
+def x(self, value):
+    """ Setter """
+    self.x = value
+
+@property
+def y(self):
+    """getter"""
+    return self.y
+
+@y.setter
+def y(self, value):
+    """ Setter """
+    self.y = value
