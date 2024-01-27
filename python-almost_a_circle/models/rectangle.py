@@ -68,6 +68,15 @@ class Rectangle(Base):
         """
         return self.__width * self.__height
 
+    def display(self):
+        """ This function prints a visual representation of
+        the rectangle
+        """
+        for thisline in range(self.__height):
+            for thischar in range(self.__width):
+                print("#", end="")
+            print()
+
     @property
     def width(self):
         """Getter for width"""
