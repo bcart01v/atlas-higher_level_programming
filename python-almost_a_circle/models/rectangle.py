@@ -66,7 +66,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """Setter for width"""
-        self._ValidateCheck(value, 'width', 1)
+        self._ValidateCheck(value, 'width', 0)
         self.__width = value
 
     @property
@@ -77,7 +77,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """Setter for height"""
-        self._ValidateCheck(value, 'height',1)
+        self._ValidateCheck(value, 'height', 0)
         self.__height = value
 
     @property
@@ -88,7 +88,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """Setter for x"""
-        self._ValidateCheck(value, 'x', 1)
+        self._ValidateCheck(value, 'x', 0)
         self.__x = value
 
     @property
@@ -99,5 +99,5 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """Setter for y"""
-        self._ValidateCheck(value, 'y', 1)
+        self._ValidateCheck(value, 'y', 0)
         self.__y = value
