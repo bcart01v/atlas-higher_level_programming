@@ -91,6 +91,16 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, \
             self.__width, self.__height)
 
+    def to_dictionary(self):
+        rect_dict = {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+        }
+        return rect_dict
+
     def update(self, *args, **kwargs):
         """
         The update function takes in any number of arguments and
