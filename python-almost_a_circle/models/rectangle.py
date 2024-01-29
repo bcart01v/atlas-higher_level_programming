@@ -104,7 +104,7 @@ class Rectangle(Base):
         if len(args) > 3:
             self.x = args[3]
         if len(args) > 4:
-            self.x = args[4]
+            self.y = args[4]
 
 
     @property
