@@ -92,6 +92,9 @@ class Rectangle(Base):
             self.__width, self.__height)
 
     def to_dictionary(self):
+        """ Build and return a dictionary
+        for the rectangle
+        """
         rect_dict = {
             "id": self.id,
             "width": self.width,
