@@ -72,9 +72,13 @@ class Rectangle(Base):
         """ This function prints a visual representation of
         the rectangle
         """
-        for thisline in range(self.__height):
-            for thischar in range(self.__width):
-                print("#", end="")
+        for eachline in range(self.__y):
+            print()
+        for eachrow in range(self.__height):
+            for eachspace in range(self.__x):
+                print(" ", end="")
+            for eachchar in range(self.__width):
+                print ("#", end="")
             print()
 
     def __str__(self):
