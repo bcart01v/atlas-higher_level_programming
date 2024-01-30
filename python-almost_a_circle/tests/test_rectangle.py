@@ -67,5 +67,10 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rect.x, 10)
         self.assertEqual(rect.y, 11)
 
+    def test_bad_width(self):
+        with self.assertRaises(ValueError) as context:
+            Rectangle(-1, 2)
+        self.assertEqual(str(context.exception), "width must be > 0")
+
 if __name__ == "__main__":
     unittest.main(exit=False)

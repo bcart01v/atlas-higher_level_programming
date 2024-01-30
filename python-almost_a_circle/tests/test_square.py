@@ -65,5 +65,6 @@ class TestCustomSquare(unittest.TestCase):
         self.assertEqual(square.y, 24)
 
 
+
 if __name__ == "__main__":
     unittest.main()
