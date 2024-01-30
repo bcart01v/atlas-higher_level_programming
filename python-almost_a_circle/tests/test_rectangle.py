@@ -5,6 +5,7 @@ This module contains unittests for the Rectangle class.
 import unittest
 import io
 import sys
+import os
 
 from models.rectangle import Rectangle
 
@@ -98,6 +99,13 @@ class TestRectangle(unittest.TestCase):
         sys.stdout = sys.__stdout__
         self.assertEqual(captured_output.getvalue(), expected_output)
 
+    def test_save_to_file_None(self):
+        Rectangle.save_to_file(None)
+        self.assertTrue(os.path.exists("Rectangle.json"))
+        with open("Rectangle.json", "r") as file:
+            contents = file.read()
+            self.assertEqual(contents, "[]")
+        os.remove("Rectangle.json")
 
 
 if __name__ == "__main__":
