@@ -6,6 +6,8 @@ import unittest
 import io
 import sys
 import os
+import json
+
 
 from models.rectangle import Rectangle
 
@@ -107,6 +109,44 @@ class TestRectangle(unittest.TestCase):
             self.assertEqual(contents, "[]")
         os.remove("Rectangle.json")
 
+    def test_to_file_blank(self):
+        Rectangle.save_to_file([])
+        self.assertTrue(os.path.exists("Rectangle.json"))
+        with open("Rectangle.json", "r") as file:
+            contents = file.read()
+            self.assertEqual(contents, "[]")
+        os.remove("Rectangle.json")
+
+    def test_to_file_onetwo(self):
+        rect = Rectangle(1, 2)
+        Rectangle.save_to_file([rect])
+        self.assertTrue(os.path.exists("Rectangle.json"))
+        with open("Rectangle.json", "r") as file:
+            contents = file.read()
+            loaded_data = json.loads(contents)
+            expected_data = json.loads(json.dumps([rect.to_dictionary()]))
+            self.assertEqual(loaded_data, expected_data)
+        os.remove("Rectangle.json")
+
+    def test_load_blank(self):
+        if os.path.exists("Rectangle.json"):
+            os.remove("Rectangle.json")
+        result = Rectangle.load_from_file()
+        self.assertEqual(result, [])
+
+    def test_load_from_existing(self):
+        rect1 = Rectangle(1, 2)
+        rect2 = Rectangle(3, 4)
+        test_data = [rect1.to_dictionary(), rect2.to_dictionary()]
+        with open("Rectangle.json", "w") as file:
+            json.dump(test_data, file)
+        loaded_rectangles = Rectangle.load_from_file()
+        self.assertEqual(len(loaded_rectangles), 2)
+        self.assertEqual(loaded_rectangles[0].width, rect1.width)
+        self.assertEqual(loaded_rectangles[0].height, rect1.height)
+        self.assertEqual(loaded_rectangles[1].width, rect2.width)
+        self.assertEqual(loaded_rectangles[1].height, rect2.height)
+        os.remove("Rectangle.json")
 
 if __name__ == "__main__":
     unittest.main(exit=False)
