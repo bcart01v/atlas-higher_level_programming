@@ -53,9 +53,9 @@ class Base:
         """ Create a dummy instance of a class,
         then apply the dictionary values to said instance """
         if cls.__name__ == 'Square':
-            temp_instance = cls(1, 1, 1)
+            temp_instance = cls(1, 0, 0)
         else:
-            temp_instance = cls(1, 1, 1, 1,)
+            temp_instance = cls(1, 1, 0, 0)
 
         temp_instance.update(**dictionary)
         return temp_instance
