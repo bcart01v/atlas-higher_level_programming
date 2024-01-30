@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" 
+"""
 This module, in it's current state, provides the Rectangle class
 which inherits from the Base class. It's presumed to represent
 rectangular shapes with various properties.
@@ -10,7 +10,7 @@ from models.base import Base
 class Rectangle(Base):
     """ A Rectangle class to represent... well, a Rectangle.
 
-    Attributes: 
+    Attributes:
     width (int): Width of the Rectangle
     height (int): Height of the Rectangle
     x (int): x - Coordinate of Rectangle
@@ -27,18 +27,18 @@ class Rectangle(Base):
             id (_type_): The ID of the rectangle. Defaults to None.
         """
         super().__init__(id)
-        
+
         self._ValidateCheck(width, 'width', 0)
         self._ValidateCheck(height, 'height', 0)
         self._ValidateCheck(x, 'x')
         self._ValidateCheck(y, 'y')
-        
+
         self.__width = width
         self.__height = height
         self.__x = x
         self.__y = y
 
-    def _ValidateCheck(self, value, name, min_value = 0):
+    def _ValidateCheck(self, value, name, min_value=0):
         """ Instead of doing the same check 100 times,
         I wanted a way to check in one spot. This is that
         one spot.
@@ -78,7 +78,7 @@ class Rectangle(Base):
             for eachspace in range(self.__x):
                 print(" ", end="")
             for eachchar in range(self.__width):
-                print ("#", end="")
+                print("#", end="")
             print()
 
     def __str__(self):
@@ -89,7 +89,7 @@ class Rectangle(Base):
             [Rectangle] (id) x/y width/height
         """
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, \
-            self.__width, self.__height)
+        self.__width, self.__height)
 
     def to_dictionary(self):
         """ Build and return a dictionary
@@ -107,12 +107,12 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """
         The update function takes in any number of arguments and
-        does something with them. If args is empty, we assume 
+        does something with them. If args is empty, we assume
         kwargs is not and use that instead
         """
         if args and len(args) > 0:
             if len(args) > 0:
-                self.id  = args[0]
+                self.id = args[0]
             if len(args) > 1:
                 self.width = args[1]
             if len(args) > 2:
