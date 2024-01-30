@@ -24,7 +24,7 @@ class Square(Rectangle):
         Needs to say Square, not Rectangle.
         """
         return ("[Square] ({}) {}/{} - {}".format(self.id, self.x,
-        self.y, self.width))
+            self.y, self.width))
 
     def update(self, *args, **kwargs):
         """We update the square. Default to args,
