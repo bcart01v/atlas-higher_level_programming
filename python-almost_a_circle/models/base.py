@@ -5,6 +5,7 @@
 import json
 import os
 
+
 class Base:
     """ Base class """
     __nb_objects = 0
@@ -20,9 +21,8 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """ A JSON implimentation"""
-        if (list_dictionaries) is None or \
-            not list_dictionaries:
-                return "[]"
+        if (list_dictionaries) is None or not list_dictionaries:
+            return "[]"
         else:
             return json.dumps(list_dictionaries)
 
