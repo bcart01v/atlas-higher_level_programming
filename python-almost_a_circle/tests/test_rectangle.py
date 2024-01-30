@@ -89,6 +89,16 @@ class TestRectangle(unittest.TestCase):
 
         self.assertEqual(captured_output.getvalue(), expected_output)
 
+    def test_display(self):
+        rect = Rectangle(4, 3)
+        expected_output = "####\n" * 3
+        captured_output = io.StringIO()
+        sys.stdout = captured_output
+        rect.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(captured_output.getvalue(), expected_output)
+
+
 
 if __name__ == "__main__":
     unittest.main(exit=False)
