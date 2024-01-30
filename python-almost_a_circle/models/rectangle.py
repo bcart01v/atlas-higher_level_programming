@@ -7,6 +7,7 @@ rectangular shapes with various properties.
 
 from models.base import Base
 
+
 class Rectangle(Base):
     """ A Rectangle class to represent... well, a Rectangle.
 
@@ -88,8 +89,8 @@ class Rectangle(Base):
         Returns:
             [Rectangle] (id) x/y width/height
         """
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, \
-        self.__width, self.__height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,\
+        self.__x, self.__y, self.__width, self.__height)
 
     def to_dictionary(self):
         """ Build and return a dictionary
