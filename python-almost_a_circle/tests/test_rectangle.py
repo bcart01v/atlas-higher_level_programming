@@ -3,7 +3,8 @@
 This module contains unittests for the Rectangle class.
 """
 import unittest
-
+import io
+import sys
 
 from models.rectangle import Rectangle
 
@@ -71,6 +72,23 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError) as context:
             Rectangle(-1, 2)
         self.assertEqual(str(context.exception), "width must be > 0")
+
+    def test_bad_heigh(self):
+        with self.assertRaises(ValueError) as context:
+            Rectangle(1, -2)
+        self.assertEqual(str(context.exception), "height must be > 0")
+
+    def test_display_without_xy(self):
+        rect = Rectangle(3, 2)
+        expected_output = "###\n" * 2
+
+        captured_output = io.StringIO()
+        sys.stdout = captured_output
+        rect.display()
+        sys.stdout = sys.__stdout__
+
+        self.assertEqual(captured_output.getvalue(), expected_output)
+
 
 if __name__ == "__main__":
     unittest.main(exit=False)
