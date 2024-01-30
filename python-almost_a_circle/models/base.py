@@ -52,8 +52,10 @@ class Base:
     def create(cls, **dictionary):
         """ Create a dummy instance of a class,
         then apply the dictionary values to said instance """
-        temp_instance = cls(1, 1)
+        if cls.__name__ == 'Square':
+            temp_instance = cls(1, 1, 1)
+        else:
+            temp_instance = cls(1, 1, 1, 1,)
 
         temp_instance.update(**dictionary)
-
         return temp_instance
