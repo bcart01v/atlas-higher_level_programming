@@ -23,8 +23,9 @@ class Square(Rectangle):
         """ Custom STR function.
         Needs to say Square, not Rectangle.
         """
-        return ("[Square] ({}) {}/{} - {}".format(self.id, self.x,
-            self.y, self.width))
+        return (
+    "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
+)
 
     def update(self, *args, **kwargs):
         """We update the square. Default to args,
