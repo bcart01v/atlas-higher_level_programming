@@ -64,7 +64,16 @@ class TestCustomSquare(unittest.TestCase):
         self.assertEqual(square.x, 18)
         self.assertEqual(square.y, 24)
 
+    def test_square_onetwo(self):
+        square = Square.create(id=1, size=2)
+        self.assertEqual(square.id, 1)
+        self.assertEqual(square.size,2)
 
+    def test_square_onetwothree(self):
+        square = Square.create(id=1, size=2, x=3)
+        self.assertEqual(square.id, 1)
+        self.assertEqual(square.size, 2)
+        self.assertEqual(square.x, 3)
 
 if __name__ == "__main__":
     unittest.main()
