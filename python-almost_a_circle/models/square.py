@@ -6,6 +6,7 @@
 
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """ A Square class, similar to Rectangle. Which will be
     a visual representation of a square.
@@ -15,15 +16,15 @@ class Square(Rectangle):
         x(int): Coordinate of the square
         y(int): coordinate of the square
     """
-    def __init__ (self, size, x=0, y=0, id=None):
+    def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
         """ Custom STR function.
         Needs to say Square, not Rectangle.
         """
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x,\
-            self.y, self.width)
+        return("[Square] ({}) {}/{} - {}".format(self.id, self.x,
+            self.y, self.width))
 
     def update(self, *args, **kwargs):
         """We update the square. Default to args,
