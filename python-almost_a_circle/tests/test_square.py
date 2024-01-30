@@ -3,6 +3,8 @@
 This module contains Unit tests for the Square class.
 """
 import unittest
+import os
+import json
 
 
 from models.square import Square
@@ -74,6 +76,46 @@ class TestCustomSquare(unittest.TestCase):
         self.assertEqual(square.id, 1)
         self.assertEqual(square.size, 2)
         self.assertEqual(square.x, 3)
+
+
+    def test_save_to_file_None(self):
+        Square.save_to_file(None)
+        self.assertTrue(os.path.exists("Square.json"))
+        with open("Square.json", "r") as file:
+            contents = file.read()
+            self.assertEqual(contents, "[]")
+        os.remove("Square.json")
+
+    def test_save_to_file_empty(self):
+        Square.save_to_file([])
+        self.assertTrue(os.path.exists("Square.json"))
+        with open("Square.json", "r") as file:
+            contents = file.read()
+            self.assertEqual(contents, "[]")
+        os.remove("Square.json")
+
+    def test_save_to_file_one_square(self):
+        s = Square(1)
+        Square.save_to_file([s])
+        self.assertTrue(os.path.exists("Square.json"))
+        with open("Square.json", "r") as file:
+            contents = file.read()
+            self.assertIn('"size": 1', contents)
+        os.remove("Square.json")
+
+    def test_load_from_file_no_file(self):
+        if os.path.exists("Square.json"):
+            os.remove("Square.json")
+        result = Square.load_from_file()
+        self.assertEqual(result, [])
+
+    def test_load_from_file_exists(self):
+        s = Square(1)
+        Square.save_to_file([s])
+        squares = Square.load_from_file()
+        self.assertIsInstance(squares[0], Square)
+        self.assertEqual(squares[0].size, 1)
+        os.remove("Square.json")
 
 if __name__ == "__main__":
     unittest.main()
