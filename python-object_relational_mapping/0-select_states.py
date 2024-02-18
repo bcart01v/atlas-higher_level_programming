@@ -1,8 +1,10 @@
 #!/usr/bin/python3
+
 """ 
 This module is used to connect to a MySQL database (hbtn_0e_0_usa)
 and prints all states sorted by state ID
 """
+
 
 import MySQLdb
 import sys
