@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-""" 
+"""
 This module is used to connect to a MySQL database (hbtn_0e_0_usa)
 and prints all states sorted by state ID
 """
@@ -9,8 +9,9 @@ and prints all states sorted by state ID
 import MySQLdb
 import sys
 
+
 def main():
-    """ 
+    """
     Main function that connects to database, and prints.
     """
     username = sys.argv[1]
@@ -28,6 +29,7 @@ def main():
 
     cursor.close()
     db.close()
+
 
 if __name__ == "__main__":
     main()
