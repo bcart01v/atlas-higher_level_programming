@@ -2,7 +2,7 @@
 
 
 """
-This module shows a list of all states and their cities 
+This module shows a list of all states and their cities
 """
 
 import sys
