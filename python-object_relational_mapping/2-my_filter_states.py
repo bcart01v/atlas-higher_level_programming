@@ -36,7 +36,7 @@ def main():
     else:
         searchvalue = None
 
-    db = MySQLdb.connect( host="localhost", port=3306, user=u, passwd=p, db=d)
+    db = MySQLdb.connect(host="localhost", port=3306, user=u, passwd=p, db=d)
 
     cursor = db.cursor()
 
@@ -47,7 +47,6 @@ def main():
             "ORDER BY id ASC"
 
     dbsearchvalue = query_template.format(searchvalue)
-
 
     cursor.execute(dbsearchvalue)
 
