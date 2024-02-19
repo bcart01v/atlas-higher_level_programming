@@ -22,7 +22,7 @@ def main():
     db = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=databasename)
 
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%'")
+    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' OR 'n%'")
     results = cursor.fetchall()
     for row in results:
         print(row)
