@@ -47,7 +47,6 @@ def main():
             "ORDER BY id ASC"
         searchvalue += '%'
 
-
     cursor.execute(query, (searchvalue,) if searchvalue else None)
 
     results = cursor.fetchall()
