@@ -6,7 +6,7 @@ This module will print only states where the state
 begins with N.
 """
 
-import sys as param
+import sys
 import MySQLdb
 
 
@@ -15,22 +15,28 @@ def main():
     Main function. Prints states that begin with N
     """
 
-    username = param.argv[1]
-    password = param.argv[2]
-    databasename = param.argv[3]
+    if len(sys.argv) > 1:
+        u = sys.argv[1]
+    else:
+        raise ValueError("Missing Username")
+
+    if len(sys.argv) > 2:
+        p = sys.argv[2]
+    else:
+        raise ValueError("Missing Password")
+
+    if len(sys.argv) > 3:
+        d = sys.argv[3]
+    else:
+        raise ValueError("Missing Database")
+
 # Added a condition to display all if search is null
-    if len(param.argv) > 4:
-        searchvalue = param.argv[4]
+    if len(sys.argv) > 4:
+        searchvalue = sys.argv[4]
     else:
         searchvalue = None
 
-    db = MySQLdb.connect(
-    host="localhost",
-    port=3306,
-    user=username,
-    passwd=password,
-    db=databasename
-)
+    db = MySQLdb.connect( host="localhost", port=3306, user=u, passwd=p, db=d)
 
     cursor = db.cursor()
 
