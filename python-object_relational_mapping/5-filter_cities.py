@@ -34,7 +34,6 @@ def main():
     else:
         searchvalue = None
 
-
     db = MySQLdb.connect(host="localhost", port=3306, user=u, passwd=p, db=d)
 
     cursor = db.cursor()
@@ -63,6 +62,7 @@ def main():
 
     cursor.close()
     db.close()
+
 
 if __name__ == "__main__":
     main()
