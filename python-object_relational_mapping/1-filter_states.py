@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 """
 This module will print only states where the state
 begins with N.
@@ -7,6 +8,7 @@ begins with N.
 
 import sys as param
 import MySQLdb
+
 
 def main():
     """
@@ -17,11 +19,11 @@ def main():
     password = param.argv[2]
     databasename = param.argv[3]
 
-    db = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db = databasename)
+    db = MySQLdb.connect(host="localhost", port=3306, user = username, passwd = password, db = databasename)
 
-    cursor=db.cursor()
+    cursor = db.cursor()
     cursor.execute("SELECT * FROM states WHERE name LIKE 'N%'")
-    results=cursor.fetchall()
+    results = cursor.fetchall()
     for row in results:
         print(row)
 
