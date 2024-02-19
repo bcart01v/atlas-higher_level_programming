@@ -19,7 +19,7 @@ def main():
     password = param.argv[2]
     databasename = param.argv[3]
 
-    db = MySQLdb.connect(host="localhost", port=3306, user = username, passwd = password, db = databasename)
+    db = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=databasename)
 
     cursor = db.cursor()
     cursor.execute("SELECT * FROM states WHERE name LIKE 'N%'")
@@ -29,6 +29,7 @@ def main():
 
     cursor.close()
     db.close()
+
 
 if __name__ == "__main__":
     main()
