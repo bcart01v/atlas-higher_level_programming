@@ -1,6 +1,10 @@
 {
     "cSpell.words": [
         "datab",
-        "databasename"
+        "databasename",
+        "Frederf",
+        "mysqldb",
+        "sessionmaker",
+        "sqlalchemy"
     ]
 }
