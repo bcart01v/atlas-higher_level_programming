@@ -16,14 +16,15 @@ if __name__ == "__main__":
     mysql_user = sys.argv[1]
     mysql_pw = sys.argv[2]
     mysql_database = sys.argv[3]
-    # Establish connection to the database. 
-    engine = create_engine(f'mysql+mysqldb://{mysql_user}:{mysql_pw}@localhost:3306/{mysql_database}')
+    # Establish connection to the database.
+    engine = create_engine(f'mysql+mysqldb://{mysql_user}'\
+        ':{mysql_pw}@localhost:3306/{mysql_database}')
     Base.metadata.bind = engine
     # Create the session to the database.
     Session = sessionmaker(bind=engine)
     session = Session()
     # Add the new line of data.
-    NewState = State(name = 'Louisiana')
+    NewState = State(name='Louisiana')
     session.add(NewState)
     session.commit()
     # Lets show the ID of the last thing created
