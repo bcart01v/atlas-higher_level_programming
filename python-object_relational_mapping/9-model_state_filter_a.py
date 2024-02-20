@@ -1,11 +1,7 @@
 #!/usr/bin/python3
-
-
 """
-This module only prints states that contain an A. It's
-Pretty simple.
+This prints states that contain an a.
 """
-
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -17,14 +13,17 @@ if __name__ == "__main__":
     mysql_pw = sys.argv[2]
     mysql_database = sys.argv[3]
 
+    # Create an engine and connect to the database
     engine = create_engine(f'mysql+mysqldb://{mysql_user}:{mysql_pw}@localhost:3306/{mysql_database}')
-
     Base.metadata.bind = engine
 
-    session = sessionmaker(bind = engine)
-    session = session()
+    # Create a session
+    Session = sessionmaker(bind=engine)
+    session = Session()
 
-    a_states = session.query(State).filter(State.name.like('%a%')).order_by(State.id).all()
+    # Query for State objects that contain the letter 'a', ordered by states.id
+    states_with_a = session.query(State).filter(State.name.like('%a%')).order_by(State.id).all()
 
-    for states in a_states:
+    # Print the results
+    for state in states_with_a:
         print(f"{state.id}: {state.name}")
