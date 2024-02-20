@@ -26,14 +26,10 @@ if __name__ == "__main__":
     session = Session()
 
     # Query for State objects that contain the letter 'a', ordered by states.id
-    statesearch = session.query(State).filter\
-        (State.name.like('%'+searchvalue+'%')).order_by(State.id).all()
+    state = session.query(State).filter(State.name == searchvalue).first()
 
     # Print the results
-    count = 0
-    for state in statesearch:
+    if state:
         print(f"{state.id}")
-        count += 1
-
-    if count == 0:
+    else:
         print("Not found")
