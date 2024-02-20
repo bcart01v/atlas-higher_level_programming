@@ -18,7 +18,8 @@ if __name__ == "__main__":
     mysql_database = sys.argv[3]
     # Establish connection to the database.
     engine = create_engine(
-        f'mysql+mysqldb://{mysql_user}:{mysql_pw}@localhost:3306/{mysql_database}')
+        f'mysql+mysqldb://{mysql_user}:{mysql_pw}'
+        f'@localhost:3306/{mysql_database}')
     Base.metadata.bind = engine
     # Create the session to the database.
     Session = sessionmaker(bind=engine)
