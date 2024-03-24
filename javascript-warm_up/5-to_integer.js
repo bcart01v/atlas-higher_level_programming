@@ -7,5 +7,5 @@ const number = Number(argument);
 if (isNaN(number)) {
     console.log('Not a number')
 } else {
-    console.log(Math.trunc(number))
+    console.log('My number: '+Math.trunc(number))
 }
