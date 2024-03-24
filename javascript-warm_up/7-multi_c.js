@@ -4,7 +4,7 @@
 const argument = process.argv[2];
 number = Number(argument);
 
-if (isNaN(number) || number <= 0) {
+if (isNaN(number)) {
   console.log('Missing number of occurrences');
 } else {
   const PrintText = 'C is fun';
