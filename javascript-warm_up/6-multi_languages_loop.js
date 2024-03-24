@@ -4,5 +4,5 @@
 const arrayPrint = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
 
 for (const line of arrayPrint) {
-    console.log(line);
+  console.log(line);
 }
