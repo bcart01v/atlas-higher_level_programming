@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/node
 // Empty class of rectangle.
 
 class Rectangle {
